@@ -403,9 +403,9 @@ export default class AnchorEditing extends Plugin {
 			}
 
 			// Enabled only when typing.
-			if ( !isTyping( editor ) ) {
-				return;
-			}
+			// if ( !isTyping( editor ) ) {
+			// 	return;
+			// }
 
 			if ( shouldCopyAttributes( editor.model ) ) {
 				selectionAttributes = selection.getAttributes();
@@ -418,9 +418,9 @@ export default class AnchorEditing extends Plugin {
 			deletedContent = false;
 
 			// Enabled only when typing.
-			if ( !isTyping( editor ) ) {
-				return;
-			}
+			// if ( !isTyping( editor ) ) {
+			// 	return;
+			// }
 
 			if ( !selectionAttributes ) {
 				return;
@@ -571,8 +571,7 @@ function shouldCopyAttributes( model ) {
 // @params {module:core/editor/editor~Editor} editor
 // @returns {Boolean}
 function isTyping( editor ) {
-	console.log('hello world', editor.commands);
 	const input = editor.plugins.get( 'Input' );
 
-	return input.isInput( editor.model.change( writer => writer.batch ) );
+	// return input.isInput( editor.model.change( writer => writer.batch ) );
 }
