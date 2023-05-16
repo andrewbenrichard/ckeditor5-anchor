@@ -571,6 +571,7 @@ function shouldCopyAttributes( model ) {
 // @params {module:core/editor/editor~Editor} editor
 // @returns {Boolean}
 function isTyping( editor ) {
+	console.log('hello world', editor.plugins.get( 'Input' ));
 	const input = editor.plugins.get( 'Input' );
 
 	return input.isInput( editor.model.change( writer => writer.batch ) );
